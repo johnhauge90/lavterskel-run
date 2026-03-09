@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* ============================================================
+   MORGENBRUDDET — Design System
+   Stack: Next.js App Router · Tailwind CSS 4 · Supabase
+   Brand: Cream + Svart + Gull — lett, luftig, fellesskap
+   Inspirert av Breakfast Club ATX
+   ============================================================ */
+
+/* ---------- Base Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Design Tokens (Tailwind v4 @theme inline) ---------- */
+@theme inline {
+  /* --- Cream palette (lys bakgrunn) --- */
+  --color-cream:        #FFFEF5;   /* Hoved-bakgrunn */
+  --color-cream-2:      #F5F4EC;   /* Kort/seksjoner */
+  --color-cream-3:      #E8E6DC;   /* Dypere overflater */
+  --color-cream-border: #D5D2C6;   /* Kanter */
+
+  /* --- Svart palette (kontrast-seksjoner) --- */
+  --color-ink:          #0A0A0A;   /* Nær-svart hoved */
+  --color-ink-2:        #2C2C2C;   /* Brødtekst */
+  --color-ink-3:        #6B6B6B;   /* Dempet tekst */
+  --color-ink-4:        #9A9A9A;   /* Svært dempet */
+
+  /* --- Gull (primær aksent — Breakfast Club ATX) --- */
+  --color-gold:         #E1B223;
+  --color-gold-h:       #C99D1E;   /* Hover */
+  --color-gold-light:   #F5E09A;   /* Lys bakgrunn-aksent */
+
+  /* --- Semantiske --- */
+  --color-emerald:      #059669;
+  --color-blue-accent:  #2563EB;
+  --color-red-accent:   #DC2626;
+  --color-amber:        #D97706;
+
+  /* --- Legacy compatibility --- */
+  --color-background: #FFFEF5;
+  --color-foreground: #0A0A0A;
+
+  /* --- Fonter --- */
+  --font-sans:         var(--font-geist-sans);
+  --font-mono:         var(--font-geist-mono);
+  --font-display:      var(--font-league-gothic);
+}
+
+/* ---------- Global Base ---------- */
+body {
+  background-color: #FFFEF5;
+  color: #2C2C2C;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* League Gothic på alle h1/h2 — kondenset display-font */
+h1, h2 {
+  font-family: var(--font-league-gothic), var(--font-geist-sans), sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFFEF5; }
+::-webkit-scrollbar-thumb { background: #D5D2C6; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #E1B223; }
+
+/* ---------- Fokus-ring ---------- */
+:focus-visible {
+  outline: 2px solid #E1B223;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
